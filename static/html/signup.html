@@ -11,10 +11,13 @@
             <div class="container-fluid">
                 <a class="navbar-brand">Askify</a>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Ask</button>
+                    <input class="form-control me-2" type="search" placeholder="Look for answers" aria-label="Search">
+                    <button type="button" class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
                 <div class="d-flex gap-1">
+                    <form class="pt-1 me-3">
+                        <button class="btn btn-outline-success" type="submit">Ask</button>
+                    </form>
                     <img src="../../data/images/38.jpg" alt="Avatar" class="img-thumbnail" style="width: 50px; height: 50px">
                     <div>
                         <div>
@@ -35,48 +38,28 @@
                     <div class="error">
                         <p class="text-danger">Passwords do not match!</p>
                     </div>
-                    <div class="d-flex">
-                        <form class="d-flex">
-                            <p style="width: 200px">Login</p>
-                            <input class="form-control mb-3" type="text" placeholder="Enter your login" aria-label="Search" style="height: 30px">
-                        </form>
-                    </div>
-                    <div class="d-flex">
-                        <form class="d-flex">
-                            <p style="width: 200px">Email</p>
-                            <input class="form-control mb-3" type="email" placeholder="Enter your email" aria-label="Search" style="height: 30px">
-                        </form>
-                    </div>
-                    <div class="d-flex">
-                        <form class="d-flex">
-                            <p style="width: 200px">NickName</p>
-                            <input class="form-control mb-3" type="text" placeholder="Enter your nickname" aria-label="Search" style="height: 30px">
-                        </form>
-                    </div>
-                    <div class="d-flex">
-                        <form class="d-flex">
-                            <p style="width: 200px">Password</p>
-                            <input class="form-control mb-3" type="password" placeholder="Enter your password" aria-label="Search" style="height: 30px">
-                        </form>
-                    </div>
-                    <div class="d-flex">
-                        <form class="d-flex">
-                            <p style="width: 200px">Repeat password</p>
-                            <input class="form-control mb-3" type="password" placeholder="Repeat your password" aria-label="Search" style="height: 30px">
-                        </form>
-                    </div>
-                    <div class="d-flex">
-                        <form class="d-flex">
-                            <p for="avatar" style="width: 180px">Upload avatar</p>
-                            <input class="form-control " type="file" id="avatar" style="height: 30px; padding-top: 3px">
-                        </form>
-                    </div>
-                    <div class="d-flex mt-2">
-                        <div style="width: 130px"></div>
-                        <form>
-                            <button type="button" class="btn btn-secondary pt-1" style="height: 32px">Register</button>
-                        </form>
-                    </div>
+                    <form class="col-5" action="...">
+                        <label class="mb-2" for="login" style="width: 200px">Login</label>
+                        <input id="login" class="form-control mb-3" type="text" placeholder="Enter your login" aria-label="Login" style="height: 30px">
+
+                        <label class="mb-2" for="email" style="width: 200px">Email</label>
+                        <input id="email" class="form-control mb-3" type="email" placeholder="Enter your email" aria-label="Email" style="height: 30px">
+
+                        <label class="mb-2" for="nickname" style="width: 200px">NickName</label>
+                        <input id="nickname" class="form-control mb-3" type="text" placeholder="Enter your nickname" aria-label="Nickname" style="height: 30px">
+
+                        <label class="mb-2" for="password" style="width: 200px">Password</label>
+                        <input id="password" class="form-control mb-3" type="password" placeholder="Enter your password" aria-label="Password" style="height: 30px">
+
+                        <label class="mb-2" for="repeat-password" style="width: 200px">Repeat password</label>
+                        <input id="repeat-password" class="form-control mb-3" type="password" placeholder="Repeat your password" aria-label="Repeat Password" style="height: 30px">
+
+                        <label class="mb-2" for="avatar" style="width: 180px">Upload avatar</label>
+                        <input id="avatar" class="form-control mb-3" type="file" style="height: 30px; padding-top: 3px">
+
+                        <button type="submit" class="btn btn-secondary pt-1" style="height: 32px">Register</button>
+                    </form>
+
                     </div>
                     <div>
                     <section class="mb-3">

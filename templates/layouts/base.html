@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -9,7 +11,7 @@
     <body>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand">Askify</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Askify</a>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Look for answers" aria-label="Search">
                     <button type="button" class="btn btn-outline-primary" type="submit">Search</button>
@@ -18,7 +20,7 @@
                     <form class="pt-1 me-3">
                         <button class="btn btn-outline-success" type="submit">Ask</button>
                     </form>
-                    <img src="../../data/images/38.jpg" alt="Avatar" class="img-thumbnail" style="width: 50px; height: 50px">
+                    <img src="{% static 'images/38.jpg' %}" alt="Avatar" class="img-thumbnail" style="width: 50px; height: 50px">
                     <div>
                         <div>
                             Acc Name
@@ -30,38 +32,19 @@
             </div>
         </nav>
         <main class="container mt-3">
-            <div class="d-flex gap-3 align-items-center">
-                <h3>New Question</h3>
-            </div>
+
             <div class="d-flex">
                 <div class="col-9">
-                    <div class="error">
-                        <p class="text-danger">Wrong tags!</p>
-                    </div>
-                    <form action="...">
-                            <label for="questionTitle" class="form-label">Title</label>
-                            <input id="questionTitle" class="form-control mb-3" type="text" placeholder="Enter your title" aria-label="Search" style="width:400px; height: 30px">
-
-                            <label for="questionText" class="form-label">Text</label>
-                            <textarea id="questionText" class="form-control mb-3" placeholder="Describe your problem" style="width: 400px"></textarea>
-
-                            <label for="questionTags" class="form-label">Tags</label>
-                            <input id="questionTags" class="form-control mb-3" type="text" placeholder="Enter up to 3 related tags" aria-label="Search" style="width:400px; height: 30px">
-                            <button type="submit" class="btn btn-secondary" style="height: 32px; padding-top: 3px">Ask</button>
-                    </form>
-                    </div>
+                    {% block content %}
+                    {% endblock %}
+                </div>
                     <div>
-                    <section class="mb-3">
+                    <section class="mb-3 col-9">
                         <h2>Popular Tags</h2>
                         <div>
-                            <a href="#" class="text-decoration-none badge text-bg-primary">Tag one</a>
-                            <a href="#" class="text-decoration-none badge text-bg-secondary">Tag two</a>
-                            <a href="#" class="text-decoration-none badge text-bg-success">Tag three</a>
-                            <a href="#" class="text-decoration-none badge text-bg-danger">Tag four</a>
-                            <a href="#" class="text-decoration-none badge text-bg-warning">Tag five</a>
-                            <a href="#" class="text-decoration-none badge text-bg-info">Tag six</a>
-                            <a href="#" class="text-decoration-none badge text-bg-light">Tag seven</a>
-                            <a href="#" class="text-decoration-none badge text-bg-dark">Tag eight</a>
+                            {% for tag in tags %}
+                            <a href="{% url 'tag' tag.id %}" class="text-decoration-none badge text-bg-secondary">{{ tag.text }}</a>
+                            {% endfor %}
                         </div>
                     </section>
                     <section>

@@ -1,0 +1,16 @@
+### Django template
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen

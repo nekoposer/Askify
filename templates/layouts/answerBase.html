@@ -1,0 +1,18 @@
+{% load static %}
+<div class="card col-10 mb-2 border-primary">
+        <div class="card-body d-flex gap-1">
+            <img src="{% static 'images/38.jpg' %}" class="card-img-top card-img-bottom border" alt="Avatar" style="width: 70px; height: 70px">
+        <div class="ms-2">
+            <p class="card-text">{{ answer.text }}</p>
+        </div>
+        </div>
+        <div class="card-body d-flex gap-3">
+            <input class="form-control" type="number" value="0" placeholder="Default input" aria-label="default input example" style="width: 65px; height: 30px">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="firstCheck">
+                <label class="form-check-label" for="firstCheck">
+                    Correct!
+                </label>
+            </div>
+        </div>
+    </div>

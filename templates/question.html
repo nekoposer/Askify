@@ -1,0 +1,15 @@
+{%  extends 'layouts/base.html' %}
+{% block content %}
+{% load static %}
+
+{% include 'layouts/questionBase.html' %}
+    {% for answer in answers %}
+        {% include 'layouts/answerBase.html' %}
+    {% endfor %}
+    
+    <form class="col-10 mb-2">
+        <input class="form-control rounded-0" type="search" placeholder="Enter your answer here.." aria-label="Search" style="height: 130px">
+        <button type="button" class="btn btn-secondary mt-2">Answer</button>
+    </form>
+    {% include 'layouts/pagination.html' %}
+{% endblock %}  

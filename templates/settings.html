@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="d-flex gap-3 align-items-center">
+        <h3>Settings</h3>
+    </div>
+    <div class="error">
+        <p class="text-danger">Email is incorrect.</p>
+    </div>
+    <form class="col-5" action="...">
+        <label class="mb-2" for="login" style="width: 200px">Login</label>
+        <input id="login" class="form-control mb-3" type="text" placeholder="" aria-label="Login" style="height: 30px">
+    
+        <label class="mb-2" for="email" style="width: 200px">Email</label>
+        <input id="email" class="form-control mb-3" type="email" placeholder="" aria-label="Email" style="height: 30px">
+    
+        <label class="mb-2" for="nickname" style="width: 200px">NickName</label>
+        <input id="nickname" class="form-control mb-3" type="text" placeholder="" aria-label="Nickname" style="height: 30px">
+    
+        <label class="mb-2" for="avatar" style="width: 180px">Upload avatar</label>
+        <input id="avatar" class="form-control mb-3" type="file" style="height: 30px; padding-top: 3px">
+    
+        <button type="submit" class="btn btn-secondary pt-1" style="height: 32px">Save</button>
+    </form>
+{% endblock %}

@@ -20,14 +20,21 @@
                     <form class="pt-1 me-3">
                         <button class="btn btn-outline-success" type="submit">Ask</button>
                     </form>
+                    {% if isLogged %}
                     <img src="{% static 'images/38.jpg' %}" alt="Avatar" class="img-thumbnail" style="width: 50px; height: 50px">
                     <div>
                         <div>
                             Acc Name
                         </div>
-                        <a href="#">settings</a>
-                        <a href="#">log out</a>
+                        <a href="{% url 'settings' %}">settings</a>
+                        <a href="#" type="submit">log out</a>
                     </div>
+                    {% else %}
+                        <form>
+                            <a href="{% url 'login' %}" class="btn btn-outline-primary mt-1" type="submit">Log in</a>
+                            <a href="{% url 'signup' %}" class="btn btn-outline-primary mt-1" type="submit">Register</a>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
         </nav>
@@ -43,7 +50,7 @@
                         <h2>Popular Tags</h2>
                         <div>
                             {% for tag in tags %}
-                            <a href="{% url 'tag' tag.id %}" class="text-decoration-none badge text-bg-secondary">{{ tag.text }}</a>
+                            <a href="{% url 'tag' tag.id %}" class="text-decoration-none badge text-bg-secondary">{{ tag.id }}</a>
                             {% endfor %}
                         </div>
                     </section>

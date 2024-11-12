@@ -8,11 +8,11 @@
         </div>
     </div>
     <div class="card-body d-flex gap-2 pt-0">
-        <p class="card-text w-25"><small class="text-muted"><a href="{% url 'question' question.id %}" class="border rounded" >Ответы</a></small></p>
+        <p class="card-text w-25"><small class="text-muted"><a href="{% url 'question' question.id %}" class="border rounded" >Answers</a></small></p>
         <div class="d-flex gap-1">
             <p>Tags:</p>
-            {% for tag in question.userTag %}
-            <a href="{% url 'tag' tag %}" class="card-link">{{ tag }}</a>
+            {% for tag in question.tags.all %}
+            <a class="me-1 text-secondary" href="{% url 'tag' tag.name %}" class="card-link">{{ tag.name }}</a>
             {% endfor %}
         </div>
         <div class="d-flex flex-row-reverse w-100">

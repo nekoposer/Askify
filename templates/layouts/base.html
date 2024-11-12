@@ -18,7 +18,7 @@
                 </form>
                 <div class="d-flex gap-1">
                     <form class="pt-1 me-3">
-                        <button class="btn btn-outline-success" type="submit">Ask</button>
+                        <a class="btn btn-outline-success" href="{% url 'ask' %}">Ask</a>
                     </form>
                     {% if isLogged %}
                     <img src="{% static 'images/38.jpg' %}" alt="Avatar" class="img-thumbnail" style="width: 50px; height: 50px">
@@ -50,7 +50,7 @@
                         <h2>Popular Tags</h2>
                         <div>
                             {% for tag in tags %}
-                            <a href="{% url 'tag' tag.id %}" class="text-decoration-none badge text-bg-secondary">{{ tag.id }}</a>
+                            <a href="{% url 'tag' tag.name %}" class="text-decoration-none badge text-bg-secondary">Tag {{ tag.name }}</a>
                             {% endfor %}
                         </div>
                     </section>
